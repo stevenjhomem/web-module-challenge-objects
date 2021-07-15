@@ -62,12 +62,27 @@ Using the burger object below do the following:
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
+
+let newPrice;
 const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+
+  discount: function(vocation){
+    if(vocation==='teacher'|| vocation ==='student'){
+      newPrice=this.price*(0.75);
+    }
+    else{
+      newPrice = this.price*(0.90);
+    }
+    return newPrice;
+  }
 }
+
+burger.discount('teacher');
+
+console.log(burger.discount('teacher'));
 
 
 
